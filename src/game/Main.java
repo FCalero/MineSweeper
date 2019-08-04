@@ -1,0 +1,35 @@
+package game;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    public static Stage stage;
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        stage = primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("game.fxml"));
+        primaryStage.setTitle("Mine Sweeper");
+        primaryStage.setScene(new Scene(root, 400, 450));
+        primaryStage.setX(0);
+        primaryStage.setY(0);
+        resizeWindow(408,480);
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
+    public static void resizeWindow(int w, int h)
+    {
+        stage.setWidth(w);
+        stage.setHeight(h);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
